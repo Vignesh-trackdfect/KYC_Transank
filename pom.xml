@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>Trackdfect</groupId>
-	<artifactId>MaruthiAssistance2</artifactId>
+	<artifactId>Transak_KYC</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>MaruthiAssistance2</name>
+	<name>Transak_KYC</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
