@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite configfailurepolicy="continue" name="Suite" parallel="none">
+	<test name="Test" preserve-order="true">
+		<classes>
+			<class name="commonMethods.Testcases" />
+		</classes>
+		<methods>
+			<include name="buyCryptoEuro" priority="1" />
+			<include name="buyCryptoBritish" priority="2" />
+			<include name="buyCryptoUSDoller" priority="3" />
+			<include name="buyCryptoSingapore" priority="4" />
+			<include name="buyCryptoNewZealand" priority="5" />
+			<include name="buyCryptoNorwegian" priority="6" />
+			<include name="buyCryptoSwedish" priority="7" />
+			<include name="buyCryptoCanada" priority="8" />
+		</methods>
+	</test>
+	<listeners>
+		<listener
+			class-name="atu.testng.reports.listeners.ATUReportsListener" />
+		<listener
+			class-name="atu.testng.reports.listeners.ConfigurationListener" />
+		<listener
+			class-name="atu.testng.reports.listeners.MethodListener" />
+	</listeners>
+</suite>
