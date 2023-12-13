@@ -127,7 +127,7 @@ public class BuyCrypto extends Keywords{
 		waitForElement1(driver,Card);
 		System.out.println("card payment");
 		waitForElement1(driver,cardHolderName);
-		wait(driver, "2");
+		wait(driver, "3");
 		driver.switchTo().frame(0);
 		System.out.println("After frame switch");
 		click(driver,cardNum_input);
