@@ -983,6 +983,29 @@ public class Keywords extends ATUReports implements KYC_Locators {
 		}
 	}
 
+	
+	public void elementnotvisible1(WebDriver driver, String xpath) {
+		String[] values = splitXpath(xpath);
+		try {
+
+			WebElement webElement = driver.findElement(By.xpath(values[1]));
+			for (int i = 1; i <= 100; i++) {
+
+				boolean flag = webElement.isDisplayed();
+
+				if (flag == true) {
+					Thread.sleep(5000);
+				} else {
+					break;
+				}
+				//System.out.println(values[0]+" still visible ..!");
+			}
+
+		} catch (Exception e) {
+
+		}
+	}
+
 	public String getAttribute(WebDriver driver, String xpath, String attribute) {
 		String[] values = splitXpath(xpath);
 		try {
@@ -1802,12 +1825,24 @@ public class Keywords extends ATUReports implements KYC_Locators {
 	
 
 	public void newTab2(WebDriver driver) {
-		((JavascriptExecutor) driver).executeScript("window.open()");
+		
+		try {
+			
+			((JavascriptExecutor) driver).executeScript("window.open()");
 
-        // Switch to the new tab
-        ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
-        driver.switchTo().window(tab.get(tab.size() - 1));
-        
+	        // Switch to the new tab
+			System.out.println("Switching to new Tab");
+			add(driver, "Switching to new Tab ", LogAs.PASSED, true, ""+"");
+
+	        ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
+	        System.out.println(tab.size());
+	        driver.switchTo().window(tab.get(tab.size() - 1));
+	        
+		}catch(Exception e) {
+			add1(driver, "Could not Switch new Tab", LogAs.FAILED, true,"");
+
+		}
+		
 	}
 	public void get(WebDriver driver, String url) {
 		Capabilities localCapabilities = ((RemoteWebDriver) driver).getCapabilities();
@@ -2392,7 +2427,13 @@ public class Keywords extends ATUReports implements KYC_Locators {
 //	           System.out.println(currencyName);
 	           if(currencyName.contains(Currency)) {
 	        	  // driver.findElement(By.xpath("//span[text()='"+currencyName+"']")).click();
-	        	   listItem.click();
+	        	  WebElement element= listItem;
+	        	  
+	        	  JavascriptExecutor executor = (JavascriptExecutor) driver;
+	  			  executor.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');",element);
+	  		      element.click();
+	  		      
+	  		      add(driver, "Click on " + values[0], LogAs.PASSED, true, Currency);
 	        	   break;
 	           }
 	        }
@@ -2451,7 +2492,7 @@ public class Keywords extends ATUReports implements KYC_Locators {
 				
 				if(error) {
 					  min_Amount=getAmount(driver,error_amount);
-					  amount=getRandomNumber(min_Amount,300);
+					  amount=getRandomNumber(min_Amount,500);
 					  amountValue=Integer.toString(amount);
 				}else {
 					break;

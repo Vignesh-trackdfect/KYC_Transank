@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import atu.testng.reports.logging.LogAs;
 import commonMethods.Keywords;
 import commonMethods.TestNgXml;
 import commonMethods.Utils;
@@ -55,9 +56,8 @@ public class BuyCrypto extends Keywords{
 		click(driver,VISA_payment);
 		
 		typeCurrency(driver,amount_input);
-//		waitForElement(driver,amount_input);
-//		doubleClick(driver,amount_input);
-//		sendKeys(driver,amount_input,"110");
+		
+		
 		waitForElement(driver,Select_CryptoType);
 		click(driver,Select_CryptoType);
 		
@@ -81,7 +81,7 @@ public class BuyCrypto extends Keywords{
 		click(driver,Contine_Btn);
 		
 		waitForElement1(driver,verification_input);
-		newTab(driver);
+		newTab2(driver);
 		wait(driver,"1");
         driver.get("https://www.mailinator.com/");
 		waitForElement1(driver,publicinbox);
@@ -191,7 +191,22 @@ public class BuyCrypto extends Keywords{
 		waitForElement1(driver,Payment_authorisation_page);
 		waitForElement1(driver,payment_processing);
 		
-		//elementnotvisible(driver,payment_processing);
+//		try {
+//			
+//             elementnotvisible1(driver,payment_processing);
+//	         waitForElement1(driver,Amt_delivered);
+//			 String success=getText(driver,Amt_delivered);
+//			 
+//			 add(driver,"Delivered messege : ", success, true, "");
+//
+//			
+//		}catch(Exception e) {
+//			
+//			add1(driver, "Failed to get delivered messege ", LogAs.FAILED, true, "");
+//
+//		}
+		
+	
 		
 
 	}
