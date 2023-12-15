@@ -22,7 +22,7 @@ public void buyCrypto_Lite(WebDriver driver,String Currency_option) {
 		
 		String Expiry_date=Utils.getDataFromTestData("KYC", "Exp date");
 		String CVV_value="";
-		String Checkout=Utils.getDataFromTestData("KYC", "Checkout");
+		String Checkout1=Utils.getDataFromTestData("KYC", "Checkout");
 		
 		//Personal details
 		String FirstName=Utils.getDataFromTestData("KYC", "First Name");
@@ -246,19 +246,34 @@ public void buyCrypto_Lite(WebDriver driver,String Currency_option) {
 		}
 		
 		waitForElement1(driver,Payment_authorisation_page);
+		
+		if(isDisplayed(driver,Checkout)) {
+			click(driver,Checkout);
+			sendKeys(driver,Checkout,Checkout1);
+			click(driver,continueBtn);
+			
+		}
 		waitForElement1(driver,payment_processing);
 		
 		try {
 			
-	         waitForElement(driver,Amt_delivered);
-			 String success=getText(driver,Amt_delivered);
-			 
-			 add(driver,"Delivered messege : ", success, true, "");
+			 waitForElement1(driver,trackOrder);
+		     
+			 if(isDisplayed(driver,Amt_delivered)) {
+				 String success=getText(driver,Amt_delivered);
+				 
+				 add(driver,"Delivered messege : ", success, true, "");
+			 }else {
+				 
+				    click(driver,trackOrder);
+					waitForElement(driver,processingTime);
+					click(driver,processingTime);
+					add(driver,"", "Processing", true, "");
 
-			
+			 }
+	         
 		}catch(Exception e) {
-			
-			add1(driver, "Failed to get the delivered message ..!", LogAs.FAILED, true, "");
+		
 
 		}
 

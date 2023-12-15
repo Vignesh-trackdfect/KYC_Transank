@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="8" total="12" passed="4" failed="0" skipped="0">
+<testng-results ignored="8" total="12" passed="2" failed="2" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[STEP1]]>
@@ -1279,107 +1279,17 @@
     <line>
       <![CDATA[STEP426]]>
     </line>
-    <line>
-      <![CDATA[STEP427]]>
-    </line>
-    <line>
-      <![CDATA[STEP428]]>
-    </line>
-    <line>
-      <![CDATA[STEP429]]>
-    </line>
-    <line>
-      <![CDATA[STEP430]]>
-    </line>
-    <line>
-      <![CDATA[STEP431]]>
-    </line>
-    <line>
-      <![CDATA[STEP432]]>
-    </line>
-    <line>
-      <![CDATA[STEP433]]>
-    </line>
-    <line>
-      <![CDATA[STEP434]]>
-    </line>
-    <line>
-      <![CDATA[STEP435]]>
-    </line>
-    <line>
-      <![CDATA[STEP436]]>
-    </line>
-    <line>
-      <![CDATA[STEP437]]>
-    </line>
-    <line>
-      <![CDATA[STEP438]]>
-    </line>
-    <line>
-      <![CDATA[STEP439]]>
-    </line>
-    <line>
-      <![CDATA[STEP440]]>
-    </line>
-    <line>
-      <![CDATA[STEP441]]>
-    </line>
-    <line>
-      <![CDATA[STEP442]]>
-    </line>
-    <line>
-      <![CDATA[STEP443]]>
-    </line>
-    <line>
-      <![CDATA[STEP444]]>
-    </line>
-    <line>
-      <![CDATA[STEP445]]>
-    </line>
-    <line>
-      <![CDATA[STEP446]]>
-    </line>
-    <line>
-      <![CDATA[STEP447]]>
-    </line>
-    <line>
-      <![CDATA[STEP448]]>
-    </line>
-    <line>
-      <![CDATA[STEP449]]>
-    </line>
-    <line>
-      <![CDATA[STEP450]]>
-    </line>
-    <line>
-      <![CDATA[STEP451]]>
-    </line>
-    <line>
-      <![CDATA[STEP452]]>
-    </line>
-    <line>
-      <![CDATA[STEP453]]>
-    </line>
-    <line>
-      <![CDATA[STEP454]]>
-    </line>
-    <line>
-      <![CDATA[STEP455]]>
-    </line>
-    <line>
-      <![CDATA[STEP456]]>
-    </line>
   </reporter-output>
-  <suite started-at="2023-12-15T15:43:14 IST" name="Suite" finished-at="2023-12-15T16:01:09 IST" duration-ms="1074219">
+  <suite started-at="2023-12-15T19:40:59 IST" name="Suite" finished-at="2023-12-15T20:02:14 IST" duration-ms="1274804">
     <groups>
     </groups>
-    <test started-at="2023-12-15T15:43:14 IST" name="Test" finished-at="2023-12-15T16:01:09 IST" duration-ms="1074219">
+    <test started-at="2023-12-15T19:40:59 IST" name="Test" finished-at="2023-12-15T20:02:14 IST" duration-ms="1274804">
       <class name="commonMethods.Testcases">
-        <test-method is-config="true" signature="getDataFromConfig()[pri:0, instance:commonMethods.Testcases@30b2b76f]" started-at="2023-12-15T15:43:15 IST" name="getDataFromConfig" finished-at="2023-12-15T15:43:15 IST" duration-ms="251" status="PASS">
+        <test-method is-config="true" signature="getDataFromConfig()[pri:0, instance:commonMethods.Testcases@7068f7ca]" started-at="2023-12-15T19:40:59 IST" name="getDataFromConfig" finished-at="2023-12-15T19:40:59 IST" duration-ms="106" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getDataFromConfig -->
-        <test-method signature="buyCryptoEuroLite()[pri:0, instance:commonMethods.Testcases@30b2b76f]" started-at="2023-12-15T15:43:15 IST" name="buyCryptoEuroLite" finished-at="2023-12-15T15:47:46 IST" duration-ms="270741" status="PASS">
+        <test-method signature="buyCryptoEuroLite()[pri:0, instance:commonMethods.Testcases@7068f7ca]" started-at="2023-12-15T19:40:59 IST" name="buyCryptoEuroLite" finished-at="2023-12-15T19:43:28 IST" duration-ms="149045" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[STEP1]]>
@@ -1725,7 +1635,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- buyCryptoEuroLite -->
-        <test-method signature="buyCryptoBritishLite()[pri:0, instance:commonMethods.Testcases@30b2b76f]" started-at="2023-12-15T15:47:46 IST" name="buyCryptoBritishLite" finished-at="2023-12-15T15:52:11 IST" duration-ms="265354" status="PASS">
+        <test-method signature="buyCryptoBritishLite()[pri:0, instance:commonMethods.Testcases@7068f7ca]" started-at="2023-12-15T19:43:28 IST" name="buyCryptoBritishLite" finished-at="2023-12-15T19:45:53 IST" duration-ms="144377" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[STEP115]]>
@@ -2071,7 +1981,71 @@
             </line>
           </reporter-output>
         </test-method> <!-- buyCryptoBritishLite -->
-        <test-method signature="buyCryptoUSDollerLite()[pri:0, instance:commonMethods.Testcases@30b2b76f]" started-at="2023-12-15T15:52:11 IST" name="buyCryptoUSDollerLite" finished-at="2023-12-15T15:56:36 IST" duration-ms="264860" status="PASS">
+        <test-method signature="buyCryptoUSDollerLite()[pri:0, instance:commonMethods.Testcases@7068f7ca]" started-at="2023-12-15T19:45:53 IST" name="buyCryptoUSDollerLite" finished-at="2023-12-15T19:52:53 IST" duration-ms="420580" status="FAIL">
+          <exception class="org.openqa.selenium.JavascriptException">
+            <message>
+              <![CDATA[javascript error: Invalid left-hand side in assignment
+  (Session info: chrome=120.0.6099.109)
+Build info: version: '3.10.0', revision: '176b4a9', time: '2018-03-02T19:03:16.397Z'
+System info: host: 'DESKTOP-7V6RIFB', ip: '192.168.1.10', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.109, chrome: {chromedriverVersion: 120.0.6099.71 (9729082fe617..., userDataDir: C:\Users\RBT\AppData\Local\...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60604}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4ad52fd9a74223827a73d1e3849c7af3]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.JavascriptException: javascript error: Invalid left-hand side in assignment
+  (Session info: chrome=120.0.6099.109)
+Build info: version: '3.10.0', revision: '176b4a9', time: '2018-03-02T19:03:16.397Z'
+System info: host: 'DESKTOP-7V6RIFB', ip: '192.168.1.10', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.109, chrome: {chromedriverVersion: 120.0.6099.71 (9729082fe617..., userDataDir: C:\Users\RBT\AppData\Local\...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60604}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4ad52fd9a74223827a73d1e3849c7af3
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:160)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:537)
+at commonMethods.Keywords.waitForElement1(Keywords.java:375)
+at scripts.BuyCryptoLite.buyCrypto_Lite(BuyCryptoLite.java:249)
+at commonMethods.Testcases.buyCryptoUSDollerLite(Testcases.java:172)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.JavascriptException -->
           <reporter-output>
             <line>
               <![CDATA[STEP229]]>
@@ -2409,16 +2383,80 @@
             <line>
               <![CDATA[STEP340]]>
             </line>
+          </reporter-output>
+        </test-method> <!-- buyCryptoUSDollerLite -->
+        <test-method signature="buyCryptoSingaporeLite()[pri:0, instance:commonMethods.Testcases@7068f7ca]" started-at="2023-12-15T19:52:53 IST" name="buyCryptoSingaporeLite" finished-at="2023-12-15T20:02:14 IST" duration-ms="560446" status="FAIL">
+          <exception class="org.openqa.selenium.JavascriptException">
+            <message>
+              <![CDATA[javascript error: Invalid left-hand side in assignment
+  (Session info: chrome=120.0.6099.109)
+Build info: version: '3.10.0', revision: '176b4a9', time: '2018-03-02T19:03:16.397Z'
+System info: host: 'DESKTOP-7V6RIFB', ip: '192.168.1.10', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.109, chrome: {chromedriverVersion: 120.0.6099.71 (9729082fe617..., userDataDir: C:\Users\RBT\AppData\Local\...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60821}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 06b9a225b340dd5bdb5d2c3f38d270c4]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.JavascriptException: javascript error: Invalid left-hand side in assignment
+  (Session info: chrome=120.0.6099.109)
+Build info: version: '3.10.0', revision: '176b4a9', time: '2018-03-02T19:03:16.397Z'
+System info: host: 'DESKTOP-7V6RIFB', ip: '192.168.1.10', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.109, chrome: {chromedriverVersion: 120.0.6099.71 (9729082fe617..., userDataDir: C:\Users\RBT\AppData\Local\...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60821}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 06b9a225b340dd5bdb5d2c3f38d270c4
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:160)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:537)
+at commonMethods.Keywords.waitForElement1(Keywords.java:375)
+at scripts.BuyCryptoLite.buyCrypto_Lite(BuyCryptoLite.java:179)
+at commonMethods.Testcases.buyCryptoSingaporeLite(Testcases.java:206)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.JavascriptException -->
+          <reporter-output>
             <line>
               <![CDATA[STEP341]]>
             </line>
             <line>
               <![CDATA[STEP342]]>
             </line>
-          </reporter-output>
-        </test-method> <!-- buyCryptoUSDollerLite -->
-        <test-method signature="buyCryptoSingaporeLite()[pri:0, instance:commonMethods.Testcases@30b2b76f]" started-at="2023-12-15T15:56:36 IST" name="buyCryptoSingaporeLite" finished-at="2023-12-15T16:01:09 IST" duration-ms="272545" status="PASS">
-          <reporter-output>
             <line>
               <![CDATA[STEP343]]>
             </line>
@@ -2670,96 +2708,6 @@
             </line>
             <line>
               <![CDATA[STEP426]]>
-            </line>
-            <line>
-              <![CDATA[STEP427]]>
-            </line>
-            <line>
-              <![CDATA[STEP428]]>
-            </line>
-            <line>
-              <![CDATA[STEP429]]>
-            </line>
-            <line>
-              <![CDATA[STEP430]]>
-            </line>
-            <line>
-              <![CDATA[STEP431]]>
-            </line>
-            <line>
-              <![CDATA[STEP432]]>
-            </line>
-            <line>
-              <![CDATA[STEP433]]>
-            </line>
-            <line>
-              <![CDATA[STEP434]]>
-            </line>
-            <line>
-              <![CDATA[STEP435]]>
-            </line>
-            <line>
-              <![CDATA[STEP436]]>
-            </line>
-            <line>
-              <![CDATA[STEP437]]>
-            </line>
-            <line>
-              <![CDATA[STEP438]]>
-            </line>
-            <line>
-              <![CDATA[STEP439]]>
-            </line>
-            <line>
-              <![CDATA[STEP440]]>
-            </line>
-            <line>
-              <![CDATA[STEP441]]>
-            </line>
-            <line>
-              <![CDATA[STEP442]]>
-            </line>
-            <line>
-              <![CDATA[STEP443]]>
-            </line>
-            <line>
-              <![CDATA[STEP444]]>
-            </line>
-            <line>
-              <![CDATA[STEP445]]>
-            </line>
-            <line>
-              <![CDATA[STEP446]]>
-            </line>
-            <line>
-              <![CDATA[STEP447]]>
-            </line>
-            <line>
-              <![CDATA[STEP448]]>
-            </line>
-            <line>
-              <![CDATA[STEP449]]>
-            </line>
-            <line>
-              <![CDATA[STEP450]]>
-            </line>
-            <line>
-              <![CDATA[STEP451]]>
-            </line>
-            <line>
-              <![CDATA[STEP452]]>
-            </line>
-            <line>
-              <![CDATA[STEP453]]>
-            </line>
-            <line>
-              <![CDATA[STEP454]]>
-            </line>
-            <line>
-              <![CDATA[STEP455]]>
-            </line>
-            <line>
-              <![CDATA[STEP456]]>
             </line>
           </reporter-output>
         </test-method> <!-- buyCryptoSingaporeLite -->

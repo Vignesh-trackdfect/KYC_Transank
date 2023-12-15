@@ -89,6 +89,13 @@ public interface KYC_Locators {
 	
 	public static String billing_AddressPage="Billing Address>//*[text()='Billing Address']";
 	
+	public static String Checkout="Checkout>//input[@id='password']";
+	public static String continueBtn="Continue Btn>//input[@type='submit']";
+	public static String trackOrder="Track Order>//*[text()='Track the Order']";
+	public static String processingTime="Processsing Time>//*[text()='Processing time']";
+	
+	
+	
 	
 	
 }
