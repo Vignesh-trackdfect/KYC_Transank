@@ -21,6 +21,7 @@ import atu.testng.reports.listeners.ATUReportsListener;
 import atu.testng.reports.listeners.ConfigurationListener;
 import atu.testng.reports.listeners.MethodListener;
 import scripts.BuyCrypto;
+import scripts.BuyCryptoLite;
 import scripts.Instant_transfer;
 
 
@@ -47,6 +48,8 @@ public class Testcases extends Config {
 	BuyCrypto buy=new BuyCrypto();
 	BuyCrypto buy1=new BuyCrypto();
 	Instant_transfer buy2=new Instant_transfer();
+	
+	BuyCryptoLite buyLite=new BuyCryptoLite();
 
 	@BeforeClass
 	public void getDataFromConfig() throws ATUReporterException, IOException, InterruptedException {
@@ -82,6 +85,23 @@ public class Testcases extends Config {
 		quit(driver);
 	}
 	
+	@Test
+	public void buyCryptoEuroLite() {
+		
+		WebDriver driver = null;
+		try {
+			driver = getWebDriver(browser);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String Currency_name="Euro";
+		
+		buyLite.buyCrypto_Lite(driver,Currency_name);
+		System.out.println("\n******************Script Execution complete******************");
+		quit(driver);
+	}
+	
 
 	@Test
 	public void buyCryptoBritish() {
@@ -96,6 +116,24 @@ public class Testcases extends Config {
 		String Currency_name="British pound";
 		
 		buy1.buyCrypto_CardPayment(driver,Currency_name);
+		//buy2.buyCrypto_Instant_Transfer(driver, Currency_name);
+		System.out.println("\n******************Script Execution complete******************");
+		quit(driver);
+	}
+	
+	@Test
+	public void buyCryptoBritishLite() {
+		
+		WebDriver driver = null;
+		try {
+			driver = getWebDriver(browser);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String Currency_name="British pound";
+		
+		buyLite.buyCrypto_Lite(driver,Currency_name);
 		//buy2.buyCrypto_Instant_Transfer(driver, Currency_name);
 		System.out.println("\n******************Script Execution complete******************");
 		quit(driver);
@@ -120,6 +158,23 @@ public class Testcases extends Config {
 	
 	
 	@Test
+	public void buyCryptoUSDollerLite() {
+		
+		WebDriver driver = null;
+		try {
+			driver = getWebDriver(browser);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String Currency_name="US Dollar";
+		
+		buyLite.buyCrypto_Lite(driver,Currency_name);
+		System.out.println("\n******************Script Execution complete******************");
+		quit(driver);
+	}
+	
+	@Test
 	public void buyCryptoSingapore() {
 		
 		WebDriver driver = null;
@@ -132,6 +187,23 @@ public class Testcases extends Config {
 		String Currency_name="Singapore Dollar";
 		
 		buy1.buyCrypto_CardPayment(driver,Currency_name);
+		System.out.println("\n******************Script Execution complete******************");
+		quit(driver);
+	}
+	
+	@Test
+	public void buyCryptoSingaporeLite() {
+		
+		WebDriver driver = null;
+		try {
+			driver = getWebDriver(browser);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String Currency_name="Singapore Dollar";
+		
+		buyLite.buyCrypto_Lite(driver,Currency_name);
 		System.out.println("\n******************Script Execution complete******************");
 		quit(driver);
 	}

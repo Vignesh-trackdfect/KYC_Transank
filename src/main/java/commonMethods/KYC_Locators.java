@@ -39,6 +39,7 @@ public interface KYC_Locators {
 	public static String payment_processing="Payment processing>//*[text()='We will send you a confirmation email once the order is processed.']";//*[text()='We will send you a confirmation email once the order is processed.']
 	public static String All_done="All done>//*[text()='All done!']";
 	
+	
 			
 	public static String publicinbox = "click on public inbox >//a[@class=\"inbox-link\"]";
 	public static String txtboxmail = "write a text box >(//input[@class=\"primary-input\"])";
@@ -65,5 +66,29 @@ public interface KYC_Locators {
 	public static String complete_your_payment="Complete your payment>//*[text()='Complete Your Payment']";
 	public static String I_have_paid="I have Paid Button>//*[text()='I have Paid']";
 	public static String Amt_delivered="Amount Succesfully Delivered>//h4[contains(., 'successfully delivered to your wallet')]";
+	
+	public static String personalDetailsPage="Personal Details Page>//*[text()='Personal Details']";
+	public static String FirstName_Input="First Name Input> //input[@name='firstName']";
+	public static String LastName_Input="Last Name Input>//input[@name='lastName']";
+	public static String Mobile_input="Mobile Number Input>//input[@id='mobileNumber']";
+	public static String Address_input="Address input>//input[@name='addressLine1']";
+	public static String Address_Page="Addresss Page>//*[text()='Address Line']";
+    public static String State_Input="State Input>//input[@name='state']";
+    public static String city_Input="City Input>//input[@name='city']";
+    public static String postCode_Input="Post Code Input>//input[@name='postCode']";
+    public static String country_Input="Country Input>//input[@id='countryCode']";
+    public static String UK_select="Select UK>//*[@role='combobox' and @aria-activedescendant='countryCode-option-0']";
+    public static String verify_Identity="Verify Identity>//*[text()='Verify your identity']";
+    public static String start_verification="Start verification>//*[text()='Start verification']";
+    public static String Issuing_country="Issuing Country>//*[@placeholder='Select issuing country']";
+    public static String UK_Issuing="Select UK >//*[text()='United Kingdom of Great Britain and Northern Ireland']";
+    public static String Driving_License="Driving License>//*[text()='Driving licence']";
+    public static String upload_Image="Upload License>//*[text()='or upload photo – no scans or photocopies']";
+    
+	public static String Upload_Btn="Upload button>//button[text()='Upload']";
+	
+	public static String billing_AddressPage="Billing Address>//*[text()='Billing Address']";
+	
+	
 	
 }

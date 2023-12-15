@@ -917,6 +917,7 @@ public class Keywords extends ATUReports implements KYC_Locators {
 	public boolean isDisplayed(WebDriver driver, String xpath) {
 		String[] values = splitXpath(xpath);
 		try {
+			//wait(driver,"3");
 			WebElement webElement = driver.findElement(By.xpath(values[1]));
 			return webElement.isDisplayed();
 		} catch (Exception e) {
@@ -989,7 +990,7 @@ public class Keywords extends ATUReports implements KYC_Locators {
 		try {
 
 			WebElement webElement = driver.findElement(By.xpath(values[1]));
-			for (int i = 1; i <= 100; i++) {
+			for (int i = 1; i <= 10; i++) {
 
 				boolean flag = webElement.isDisplayed();
 
@@ -2502,5 +2503,39 @@ public class Keywords extends ATUReports implements KYC_Locators {
 			
 			
 		}
+		
+		
+       public void typeCurrency1(WebDriver driver,String Xpath) {
+			
+			String[] values = splitXpath(Xpath);
+
+			waitForElement(driver,Xpath);
+			int min_Amount=20;
+			int amount=getRandomNumber(min_Amount,30);
+			String amountValue=String.valueOf(amount);
+			
+			
+			for(int i=0;i<5;i++) {
+				doubleClick(driver,Xpath);
+				sendKeys(driver,Xpath,amountValue);
+				wait(driver,"4");
+				boolean error=isDisplayed(driver,error_amount);
+				
+				if(error) {
+					  min_Amount=getAmount(driver,error_amount);
+					  amount=getRandomNumber(min_Amount,50);
+					  amountValue=Integer.toString(amount);
+				}else {
+					break;
+				}
+
+			}
+			
+			
+		}
+
+		
+		
+		
 		
 }

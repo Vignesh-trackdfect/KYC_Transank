@@ -4,40 +4,44 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 import atu.testng.reports.logging.LogAs;
 import commonMethods.Keywords;
 import commonMethods.TestNgXml;
 import commonMethods.Utils;
 
-public class BuyCrypto extends Keywords{
+public class BuyCryptoLite extends Keywords {
 
 	
-	public void buyCrypto_CardPayment(WebDriver driver,String Currency_option) {
+public void buyCrypto_Lite(WebDriver driver,String Currency_option) {
 		
 		String Url=TestNgXml.getdatafromExecution().get("buyCryptoEuro");
-		String email_id=Utils.getDataFromTestData("KYC", "Mail");
+		String email_id=randomString(6)+"@mailinator.com";
 		String Eth_Address=Utils.getDataFromTestData("KYC", "ETH Address");
-		
 		
 		String Expiry_date=Utils.getDataFromTestData("KYC", "Exp date");
 		String CVV_value="";
 		String Checkout=Utils.getDataFromTestData("KYC", "Checkout");
 		
-		//Card Number details 
-		String Card_Number_USD=Utils.getDataFromTestData("KYC", "USD");
-		String Card_Number_EURO=Utils.getDataFromTestData("KYC", "EUR");
-		String Card_Number_SGD=Utils.getDataFromTestData("KYC", "SGD");
-		String Card_Number_GBP=Utils.getDataFromTestData("KYC", "GBP");
+		//Personal details
+		String FirstName=Utils.getDataFromTestData("KYC", "First Name");
 		
+		String LastName=Utils.getDataFromTestData("KYC", "Last Name");
+		String MobileNum=Utils.getDataFromTestData("KYC", "Mobile Number");
+		
+
+	    // Address details
+		String addressLine=Utils.getDataFromTestData("KYC", "Address Line");
+		String StateValue=Utils.getDataFromTestData("KYC", "State");
+		String CityValue=Utils.getDataFromTestData("KYC", "City");
+		String post_code=Utils.getDataFromTestData("KYC", "Postal Code");
+		String Country_value=Utils.getDataFromTestData("KYC", "Country");
 		
 		String Card_Number="";
-		String Currency_Type=Currency_option;//Currency type
+		String Currency_Type=Currency_option;
 		
-		if(Currency_Type=="US Dollar") {
+        if(Currency_Type=="US Dollar") {
         	Card_Number=Utils.getDataFromTestData("KYC", "USD");
         	CVV_value=Utils.getDataFromTestData("KYC", "CVV2");
 		}else{
@@ -50,7 +54,6 @@ public class BuyCrypto extends Keywords{
 		navigateUrl(driver,Url);
 		
 		waitForElement1(driver,Buy_Page);
-		click(driver,Buy_Page);
 		
 		waitForElement(driver,selectCurrency);
 		click(driver,selectCurrency);
@@ -61,7 +64,7 @@ public class BuyCrypto extends Keywords{
 		waitForElement(driver,VISA_payment);
 		click(driver,VISA_payment);
 		
-		typeCurrency(driver,amount_input);
+		typeCurrency1(driver,amount_input);
 		
 		
 		waitForElement(driver,Select_CryptoType);
@@ -128,12 +131,60 @@ public class BuyCrypto extends Keywords{
 		
 		waitForElement(driver,Contine_Btn);
 		click(driver,Contine_Btn);
-		
+	
+			
+			waitForElement1(driver,personalDetailsPage);
+			waitForElement(driver,FirstName_Input);
+			sendKeys(driver,FirstName_Input,FirstName);
+			
+			waitForElement(driver,LastName_Input);
+			sendKeys(driver,LastName_Input,LastName);
+			
+			waitForElement(driver,Mobile_input);
+			doubleClick(driver,Mobile_input);
+			sendKeys(driver,Mobile_input,MobileNum);
+			
+			waitForElement(driver,Contine_Btn);
+			click(driver,Contine_Btn);
+			
+			waitForElement1(driver,Address_input);
+			sendKeys(driver,Address_input,addressLine);
+			
+			waitForElement(driver,State_Input);
+			sendKeys(driver,State_Input,StateValue);
+			
+			waitForElement(driver,city_Input);
+			sendKeys(driver,city_Input,CityValue);
+			
+			waitForElement(driver,postCode_Input);
+			sendKeys(driver,postCode_Input,post_code);
+			
+			waitForElement(driver,country_Input);
+			click(driver,country_Input);
+			sendKeys(driver,country_Input,Country_value);
+	         
+			try {
+				Robot r = new Robot();
+				r.keyPress(KeyEvent.VK_CONTROL);
+				r.keyPress(KeyEvent.VK_DOWN);
+				r.keyRelease(KeyEvent.VK_CONTROL);
+				enter(driver);
+			} catch (Exception e) {
+				
+			}
+			
+			waitForElement(driver,Contine_Btn);
+			click(driver,Contine_Btn);
+			
+			waitForElement1(driver,billing_AddressPage);
+			waitForElement(driver,Contine_Btn);
+			click(driver,Contine_Btn);
+			
 		
 		waitForElement1(driver,Card);
 		System.out.println("card payment");
 		waitForElement1(driver,cardHolderName);
-		wait(driver, "3");
+		wait(driver, "2");
 		driver.switchTo().frame(0);
 		System.out.println("After frame switch");
 		click(driver,cardNum_input);
@@ -210,11 +261,10 @@ public class BuyCrypto extends Keywords{
 			add1(driver, "Failed to get the delivered message ..!", LogAs.FAILED, true, "");
 
 		}
-	
-	
+
 		
 
 	}
 	
-	
+
 }
