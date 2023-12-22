@@ -22,6 +22,10 @@ import atu.testng.reports.listeners.ConfigurationListener;
 import atu.testng.reports.listeners.MethodListener;
 import scripts.BuyCrypto;
 import scripts.BuyCryptoLite;
+<<<<<<< HEAD
+=======
+import scripts.Instant_transfer;
+>>>>>>> origin/main
 
 
 @Listeners({ ATUReportsListener.class, ConfigurationListener.class, MethodListener.class})
@@ -48,6 +52,10 @@ public class Testcases extends Config {
 
 	BuyCrypto buy=new BuyCrypto();
 	BuyCrypto buy1=new BuyCrypto();
+<<<<<<< HEAD
+=======
+	Instant_transfer buy2=new Instant_transfer();
+>>>>>>> origin/main
 	
 	BuyCryptoLite buyLite=new BuyCryptoLite();
 
@@ -92,6 +100,27 @@ public class Testcases extends Config {
 		quit(driver);
 	}
 	
+<<<<<<< HEAD
+=======
+	@Test
+	public void buyCryptoEuroLite() {
+		
+		WebDriver driver = null;
+		try {
+			driver = getWebDriver(browser);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String Currency_name="Euro";
+		
+		buyLite.buyCrypto_Lite(driver,Currency_name);
+		System.out.println("\n******************Script Execution complete******************");
+		quit(driver);
+	}
+	
+
+>>>>>>> origin/main
 	@Test
 	public void buyCryptoEuroLite() throws Exception {
 		
@@ -139,7 +168,29 @@ public class Testcases extends Config {
 	}
 	
 	@Test
+<<<<<<< HEAD
 	public void buyCryptoBritishLite() throws Exception {
+=======
+	public void buyCryptoBritishLite() {
+		
+		WebDriver driver = null;
+		try {
+			driver = getWebDriver(browser);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String Currency_name="British pound";
+		
+		buyLite.buyCrypto_Lite(driver,Currency_name);
+		//buy2.buyCrypto_Instant_Transfer(driver, Currency_name);
+		System.out.println("\n******************Script Execution complete******************");
+		quit(driver);
+	}
+	
+	@Test
+	public void buyCryptoUSDoller() {
+>>>>>>> origin/main
 		
 		WebDriver driver = null;
 		try {
@@ -183,7 +234,28 @@ public class Testcases extends Config {
 	
 	
 	@Test
+<<<<<<< HEAD
 	public void buyCryptoUSDollerLite() throws Exception {
+=======
+	public void buyCryptoUSDollerLite() {
+		
+		WebDriver driver = null;
+		try {
+			driver = getWebDriver(browser);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String Currency_name="US Dollar";
+		
+		buyLite.buyCrypto_Lite(driver,Currency_name);
+		System.out.println("\n******************Script Execution complete******************");
+		quit(driver);
+	}
+	
+	@Test
+	public void buyCryptoSingapore() {
+>>>>>>> origin/main
 		
 		WebDriver driver = null;
 		try {
@@ -225,7 +297,28 @@ public class Testcases extends Config {
 	}
 	
 	@Test
+<<<<<<< HEAD
 	public void buyCryptoSingaporeLite() throws Exception {
+=======
+	public void buyCryptoSingaporeLite() {
+		
+		WebDriver driver = null;
+		try {
+			driver = getWebDriver(browser);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String Currency_name="Singapore Dollar";
+		
+		buyLite.buyCrypto_Lite(driver,Currency_name);
+		System.out.println("\n******************Script Execution complete******************");
+		quit(driver);
+	}
+	
+	@Test
+	public void buyCryptoSwedish() {
+>>>>>>> origin/main
 		
 		WebDriver driver = null;
 		try {

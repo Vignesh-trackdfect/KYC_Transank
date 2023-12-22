@@ -952,6 +952,7 @@ public class Keywords extends ATUReports implements HOME_Page_Locators,AddressPa
 	public boolean isDisplayed(WebDriver driver, String xpath) {
 		String[] values = splitXpath(xpath);
 		try {
+			//wait(driver,"3");
 			WebElement webElement = driver.findElement(By.xpath(values[1]));
 			return webElement.isDisplayed();
 		} catch (Exception e) {
@@ -2540,8 +2541,12 @@ public class Keywords extends ATUReports implements HOME_Page_Locators,AddressPa
 		}
 		
 		
+<<<<<<< HEAD
 		
           public void typeCurrency1(WebDriver driver,String Xpath) {
+=======
+       public void typeCurrency1(WebDriver driver,String Xpath) {
+>>>>>>> origin/main
 			
 			String[] values = splitXpath(Xpath);
 
@@ -2554,12 +2559,20 @@ public class Keywords extends ATUReports implements HOME_Page_Locators,AddressPa
 			for(int i=0;i<5;i++) {
 				doubleClick(driver,Xpath);
 				sendKeys(driver,Xpath,amountValue);
+<<<<<<< HEAD
 				wait(driver,"3");
+=======
+				wait(driver,"4");
+>>>>>>> origin/main
 				boolean error=isDisplayed(driver,error_amount);
 				
 				if(error) {
 					  min_Amount=getAmount(driver,error_amount);
+<<<<<<< HEAD
 					  amount=getRandomNumber(min_Amount,55);
+=======
+					  amount=getRandomNumber(min_Amount,50);
+>>>>>>> origin/main
 					  amountValue=Integer.toString(amount);
 				}else {
 					break;
@@ -2571,4 +2584,10 @@ public class Keywords extends ATUReports implements HOME_Page_Locators,AddressPa
 		}
 
 		
+<<<<<<< HEAD
+=======
+		
+		
+		
+>>>>>>> origin/main
 }

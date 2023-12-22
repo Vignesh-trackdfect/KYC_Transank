@@ -3,6 +3,7 @@ package scripts;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -10,6 +11,10 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+=======
+
+import org.openqa.selenium.WebDriver;
+>>>>>>> origin/main
 
 import atu.testng.reports.logging.LogAs;
 import commonMethods.Keywords;
@@ -22,7 +27,11 @@ public class BuyCryptoLite extends Keywords {
 public void buyCrypto_Lite(WebDriver driver,String Currency_option) {
 		
 		String Url=TestNgXml.getdatafromExecution().get("buyCryptoEuro");
+<<<<<<< HEAD
 		String email_id=randomString(7)+"@mailinator.com";
+=======
+		String email_id=randomString(6)+"@mailinator.com";
+>>>>>>> origin/main
 		String Eth_Address=Utils.getDataFromTestData("KYC", "ETH Address");
 		
 		String Expiry_date=Utils.getDataFromTestData("KYC", "Exp date");
@@ -80,8 +89,11 @@ public void buyCrypto_Lite(WebDriver driver,String Currency_option) {
 		waitForElement(driver,ETH_arbiturium);
 		click(driver,ETH_arbiturium);
 		
+<<<<<<< HEAD
 		System.out.println("Estimate Value :"+getText(driver,Estimate_Value));	
 		
+=======
+>>>>>>> origin/main
 		waitForElement(driver,Buy_Now_Btn);
 		click(driver,Buy_Now_Btn);
 		
@@ -116,6 +128,7 @@ public void buyCrypto_Lite(WebDriver driver,String Currency_option) {
 		String verificationCode=getText(driver,verification_Code);
 		driver.switchTo().defaultContent();
 		
+<<<<<<< HEAD
 		ArrayList<String> tab2 = new ArrayList<String>(driver.getWindowHandles());
 		wait(driver, "1");
 		driver.switchTo().window(tab2.get(0));
@@ -133,6 +146,22 @@ public void buyCrypto_Lite(WebDriver driver,String Currency_option) {
 //		} catch (Exception e) {
 //			
 //		}
+=======
+		try {
+			Robot r = new Robot();
+			r.keyPress(KeyEvent.VK_CONTROL);
+			r.keyPress(KeyEvent.VK_W);
+			r.keyRelease(KeyEvent.VK_CONTROL);
+			wait(driver, "1");
+			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+			wait(driver, "1");
+//			System.out.println(tabs.size());
+			driver.switchTo().window(tabs.get(0));
+			wait(driver, "1");
+		} catch (Exception e) {
+			
+		}
+>>>>>>> origin/main
 		
 		waitForElement1(driver,verification_input);
 		sendKeys(driver,verification_input,verificationCode);
@@ -171,6 +200,7 @@ public void buyCrypto_Lite(WebDriver driver,String Currency_option) {
 			
 			waitForElement(driver,country_Input);
 			click(driver,country_Input);
+<<<<<<< HEAD
 			
 			sendKeys(driver,country_Input,Country_value);
 	         
@@ -186,11 +216,24 @@ public void buyCrypto_Lite(WebDriver driver,String Currency_option) {
 				wait(driver, "1");
 				
 				
+=======
+			sendKeys(driver,country_Input,Country_value);
+	         
+			try {
+				Robot r = new Robot();
+				r.keyPress(KeyEvent.VK_CONTROL);
+				r.keyPress(KeyEvent.VK_DOWN);
+				r.keyRelease(KeyEvent.VK_CONTROL);
+				enter(driver);
+>>>>>>> origin/main
 			} catch (Exception e) {
 				
 			}
 			
+<<<<<<< HEAD
 			enter(driver);
+=======
+>>>>>>> origin/main
 			waitForElement(driver,Contine_Btn);
 			click(driver,Contine_Btn);
 			
@@ -201,6 +244,7 @@ public void buyCrypto_Lite(WebDriver driver,String Currency_option) {
 		
 		waitForElement1(driver,Card);
 		System.out.println("card payment");
+<<<<<<< HEAD
 		wait(driver, "2");
 //		List<WebElement> frames = driver.findElements(By.tagName("iframe"));
 //
@@ -211,6 +255,13 @@ public void buyCrypto_Lite(WebDriver driver,String Currency_option) {
         driver.switchTo().frame("checkout-frames-cardNumber");
 		System.out.println("After frame switch");
 		click1(driver,cardNum_input);
+=======
+		waitForElement1(driver,cardHolderName);
+		wait(driver, "2");
+		driver.switchTo().frame(0);
+		System.out.println("After frame switch");
+		click(driver,cardNum_input);
+>>>>>>> origin/main
 		
 		sendKeys(driver,cardNum_input,Card_Number);
 		
@@ -218,9 +269,14 @@ public void buyCrypto_Lite(WebDriver driver,String Currency_option) {
 		
 		waitForElement1(driver,cardHolderName);
 		sendKeys(driver,cardHolderName,"Test");
+<<<<<<< HEAD
 	
         driver.switchTo().frame("checkout-frames-expiryDate");
 		
+=======
+		
+		driver.switchTo().frame(1);
+>>>>>>> origin/main
 		waitForElement1(driver,expiry_date);
 		click(driver,expiry_date);
 		sendKeys(driver,expiry_date,Expiry_date);
@@ -228,7 +284,11 @@ public void buyCrypto_Lite(WebDriver driver,String Currency_option) {
 		driver.switchTo().defaultContent();
 
 		
+<<<<<<< HEAD
         driver.switchTo().frame("checkout-frames-cvv");
+=======
+		driver.switchTo().frame(2);
+>>>>>>> origin/main
 
 		waitForElement1(driver,CVV_input);
 		click(driver,CVV_input);
@@ -236,11 +296,19 @@ public void buyCrypto_Lite(WebDriver driver,String Currency_option) {
 		
 		driver.switchTo().defaultContent();
 
+<<<<<<< HEAD
 		click2(driver,Card);
 		waitForElement(driver,AddToCard_Btn);
 		click(driver,AddToCard_Btn);
 		
 
+=======
+		click(driver,cardHolderName);
+		wait(driver,"2");
+		
+		doubleClick(driver,AddToCard_Btn);
+		
+>>>>>>> origin/main
 		waitForElement1(driver,confirm_order_page);
 		click(driver,I_accept);
 		
@@ -269,6 +337,7 @@ public void buyCrypto_Lite(WebDriver driver,String Currency_option) {
 			
 		}
 		
+<<<<<<< HEAD
 		waitForElement(driver,Payment_authorisation_page);
 		
 		if(Currency_Type=="US Dollar") {
@@ -298,6 +367,38 @@ public void buyCrypto_Lite(WebDriver driver,String Currency_option) {
 		}catch(Exception e) {
 		
            add1(driver,"Failed to get verification messege ", LogAs.FAILED,true,"");
+=======
+		waitForElement1(driver,Payment_authorisation_page);
+		
+		if(isDisplayed(driver,Checkout)) {
+			click(driver,Checkout);
+			sendKeys(driver,Checkout,Checkout1);
+			click(driver,continueBtn);
+			
+		}
+		waitForElement1(driver,payment_processing);
+		
+		try {
+			
+			 waitForElement1(driver,trackOrder);
+		     
+			 if(isDisplayed(driver,Amt_delivered)) {
+				 String success=getText(driver,Amt_delivered);
+				 
+				 add(driver,"Delivered messege : ", success, true, "");
+			 }else {
+				 
+				    click(driver,trackOrder);
+					waitForElement(driver,processingTime);
+					click(driver,processingTime);
+					add(driver,"", "Processing", true, "");
+
+			 }
+	         
+		}catch(Exception e) {
+		
+
+>>>>>>> origin/main
 		}
 
 		

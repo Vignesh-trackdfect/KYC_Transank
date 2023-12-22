@@ -10,6 +10,10 @@
     <classes>
       <class name="commonMethods.Testcases">
         <methods>
+<<<<<<< HEAD
+=======
+          <include name="buyCryptoSingaporeLite"/>
+>>>>>>> origin/main
           <include name="buyCryptoUSDollerLite"/>
           <include name="getDataFromConfig"/>
         </methods>
