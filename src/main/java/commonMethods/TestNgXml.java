@@ -144,9 +144,15 @@ public class TestNgXml {
 	         suiteattr2.setValue("Suite");
 	         rootElement.setAttributeNode(suiteattr2);
 	         
-	         Attr suiteattr3 = doc.createAttribute("parallel");
-	         suiteattr3.setValue("none");
-	         rootElement.setAttributeNode(suiteattr3);
+	         
+	         String executionType=Utils.getDataFromTestConfig("Execution Type");
+	         if(!executionType.equalsIgnoreCase("Parallel")) {
+	        	 Attr suiteattr3 = doc.createAttribute("parallel");
+	        	 suiteattr3.setValue("none");
+	        	 rootElement.setAttributeNode(suiteattr3);
+	         }else {
+	        	
+	         }
 	         
 	         Element test = doc.createElement("test");
 	         rootElement.appendChild(test);
@@ -155,10 +161,22 @@ public class TestNgXml {
 	         testattr1.setValue("Test");
 	         test.setAttributeNode(testattr1);
 	         
-	         Attr testattr2 = doc.createAttribute("preserve-order");
-	         testattr2.setValue("true");
-	         test.setAttributeNode(testattr2);
+	         Attr testattr2;
+	         Attr testattr3;
 	         
+	         if(executionType.equalsIgnoreCase("Parallel")) {
+	        	 testattr2= doc.createAttribute("parallel");
+	        	 testattr2.setValue("methods");
+	        	 test.setAttributeNode(testattr2);
+	        	 testattr3 = doc.createAttribute("thread-count");
+	        	 testattr3.setValue(Utils.getDataFromTestConfig("ParallelTests").replace(".0", ""));
+	        	 test.setAttributeNode(testattr3);
+	         }else {
+	        	 testattr2 = doc.createAttribute("preserve-order");
+		         testattr2.setValue("true");
+		         test.setAttributeNode(testattr2);
+	         }
+	         	        
 	         Element classes = doc.createElement("classes");
 	         test.appendChild(classes);
 	         

@@ -21,7 +21,7 @@ import atu.testng.reports.listeners.ATUReportsListener;
 import atu.testng.reports.listeners.ConfigurationListener;
 import atu.testng.reports.listeners.MethodListener;
 import scripts.BuyCrypto;
-import scripts.Instant_transfer;
+import scripts.BuyCryptoLite;
 
 
 @Listeners({ ATUReportsListener.class, ConfigurationListener.class, MethodListener.class})
@@ -41,12 +41,15 @@ public class Testcases extends Config {
 	public String browser;
 	public WebDriver driver;
 	public String search;
+	public String buildname;
+	public String Configuration;
 
 	File f = new File(report_folder_create + "\\reports");
 
 	BuyCrypto buy=new BuyCrypto();
 	BuyCrypto buy1=new BuyCrypto();
-	Instant_transfer buy2=new Instant_transfer();
+	
+	BuyCryptoLite buyLite=new BuyCryptoLite();
 
 	@BeforeClass
 	public void getDataFromConfig() throws ATUReporterException, IOException, InterruptedException {
@@ -55,7 +58,8 @@ public class Testcases extends Config {
 		browser = Utils.getDataFromTestConfig("AppBrowser");
 		project_Name = Utils.getDataFromTestConfig("Project_Name");
 		version_Name = Utils.getDataFromTestConfig("Version_Name");
-		//driver = getWebDriver(browser);
+		buildname = project_Name + "_" + java.time.LocalDate.now().toString() + "_" + java.time.LocalTime.now();
+		Configuration=Utils.getDataFromTestConfig("Execution env");//driver = getWebDriver(browser);
 		System.out.println("\n******************Script Execution Started******************");
 
 	}
@@ -66,15 +70,21 @@ public class Testcases extends Config {
 //	}
 
 	@Test
-	public void buyCryptoEuro() {
+	public void buyCryptoEuro() throws Exception {
 		
 		WebDriver driver = null;
+		
 		try {
-			driver = getWebDriver(browser);
+			if(Configuration.equalsIgnoreCase("local")) {
+				driver = getWebDriver(browser);
+			}else {
+				driver = getWebDriver1(browser,buildname,"buyCryptoEuro");
+			}
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		String Currency_name="Euro";
 		
 		buy.buyCrypto_CardPayment(driver,Currency_name);
@@ -82,13 +92,40 @@ public class Testcases extends Config {
 		quit(driver);
 	}
 	
-
 	@Test
-	public void buyCryptoBritish() {
+	public void buyCryptoEuroLite() throws Exception {
 		
 		WebDriver driver = null;
 		try {
-			driver = getWebDriver(browser);
+			
+			if(Configuration.equalsIgnoreCase("local")) {
+				driver = getWebDriver(browser);
+			}else {
+				driver = getWebDriver1(browser,buildname,"buyCryptoEuroLite");
+			}
+			
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String Currency_name="Euro";
+		
+		buyLite.buyCrypto_Lite(driver,Currency_name);
+		System.out.println("\n******************Script Execution complete******************");
+		quit(driver);
+	}
+	
+
+	@Test
+	public void buyCryptoBritish() throws Exception {
+		
+		WebDriver driver = null;
+		try {
+			if(Configuration.equalsIgnoreCase("local")) {
+				driver = getWebDriver(browser);
+			}else {
+				driver = getWebDriver1(browser,buildname,"buyCryptoBritish");
+			}
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -102,11 +139,37 @@ public class Testcases extends Config {
 	}
 	
 	@Test
-	public void buyCryptoUSDoller() {
+	public void buyCryptoBritishLite() throws Exception {
 		
 		WebDriver driver = null;
 		try {
-			driver = getWebDriver(browser);
+			if(Configuration.equalsIgnoreCase("local")) {
+				driver = getWebDriver(browser);
+			}else {
+				driver = getWebDriver1(browser,buildname,"buyCryptoBritishLite");
+			}
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String Currency_name="British pound";
+		
+		buyLite.buyCrypto_Lite(driver,Currency_name);
+		//buy2.buyCrypto_Instant_Transfer(driver, Currency_name);
+		System.out.println("\n******************Script Execution complete******************");
+		quit(driver);
+	}
+	
+	@Test
+	public void buyCryptoUSDoller() throws Exception {
+		
+		WebDriver driver = null;
+		try {
+			if(Configuration.equalsIgnoreCase("local")) {
+				driver = getWebDriver(browser);
+			}else {
+				driver = getWebDriver1(browser,buildname,"buyCryptoUSDoller");
+			}
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -120,11 +183,36 @@ public class Testcases extends Config {
 	
 	
 	@Test
-	public void buyCryptoSingapore() {
+	public void buyCryptoUSDollerLite() throws Exception {
 		
 		WebDriver driver = null;
 		try {
-			driver = getWebDriver(browser);
+			if(Configuration.equalsIgnoreCase("local")) {
+				driver = getWebDriver(browser);
+			}else {
+				driver = getWebDriver1(browser,buildname,"buyCryptoUSDollerLite");
+			}
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String Currency_name="US Dollar";
+		
+		buyLite.buyCrypto_Lite(driver,Currency_name);
+		System.out.println("\n******************Script Execution complete******************");
+		quit(driver);
+	}
+	
+	@Test
+	public void buyCryptoSingapore() throws Exception {
+		
+		WebDriver driver = null;
+		try {
+			if(Configuration.equalsIgnoreCase("local")) {
+				driver = getWebDriver(browser);
+			}else {
+				driver = getWebDriver1(browser,buildname,"buyCryptoSingapore");
+			}
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -137,11 +225,36 @@ public class Testcases extends Config {
 	}
 	
 	@Test
-	public void buyCryptoSwedish() {
+	public void buyCryptoSingaporeLite() throws Exception {
 		
 		WebDriver driver = null;
 		try {
-			driver = getWebDriver(browser);
+			if(Configuration.equalsIgnoreCase("local")) {
+				driver = getWebDriver(browser);
+			}else {
+				driver = getWebDriver1(browser,buildname,"buyCryptoSingaporeLite");
+			}
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String Currency_name="Singapore Dollar";
+		
+		buyLite.buyCrypto_Lite(driver,Currency_name);
+		System.out.println("\n******************Script Execution complete******************");
+		quit(driver);
+	}
+	
+	@Test
+	public void buyCryptoSwedish() throws Exception {
+		
+		WebDriver driver = null;
+		try {
+			if(Configuration.equalsIgnoreCase("local")) {
+				driver = getWebDriver(browser);
+			}else {
+				driver = getWebDriver1(browser,buildname,"buyCryptoSwedish");
+			}
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -154,11 +267,15 @@ public class Testcases extends Config {
 	}
 	
 	@Test
-	public void buyCryptoNorwegian() {
+	public void buyCryptoNorwegian() throws Exception {
 		
 		WebDriver driver = null;
 		try {
-			driver = getWebDriver(browser);
+			if(Configuration.equalsIgnoreCase("local")) {
+				driver = getWebDriver(browser);
+			}else {
+				driver = getWebDriver1(browser,buildname,"buyCryptoNorwegian");
+			}
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -171,11 +288,15 @@ public class Testcases extends Config {
 	}
 	
 	@Test
-	public void buyCryptoNewZealand() {
+	public void buyCryptoNewZealand() throws Exception {
 		
 		WebDriver driver = null;
 		try {
-			driver = getWebDriver(browser);
+			if(Configuration.equalsIgnoreCase("local")) {
+				driver = getWebDriver(browser);
+			}else {
+				driver = getWebDriver1(browser,buildname,"buyCryptoNewZealand");
+			}
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -188,11 +309,15 @@ public class Testcases extends Config {
 	}
 	
 	@Test
-	public void buyCryptoCanada() {
+	public void buyCryptoCanada() throws Exception {
 		
 		WebDriver driver = null;
 		try {
-			driver = getWebDriver(browser);
+			if(Configuration.equalsIgnoreCase("local")) {
+				driver = getWebDriver(browser);
+			}else {
+				driver = getWebDriver1(browser,buildname,"buyCryptoCanada");
+			}
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

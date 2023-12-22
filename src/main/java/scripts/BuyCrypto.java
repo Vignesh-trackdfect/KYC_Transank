@@ -20,27 +20,24 @@ public class BuyCrypto extends Keywords{
 		
 		String Url=TestNgXml.getdatafromExecution().get("buyCryptoEuro");
 		String email_id=Utils.getDataFromTestData("KYC", "Mail");
-		String Eth_Address=Utils.getDataFromTestData("KYC", "ETH Address");//Card Number1
-		String Card_Number_USD=Utils.getDataFromTestData("KYC", "USD");
-		String Card_Number_EURO=Utils.getDataFromTestData("KYC", "EUR");
-		String Card_Number_SGD=Utils.getDataFromTestData("KYC", "SGD");
-		String Card_Number_GBP=Utils.getDataFromTestData("KYC", "GBP");
+        String Eth_Address=Utils.getDataFromTestData("KYC", "ETH Address");
 		
 		String Expiry_date=Utils.getDataFromTestData("KYC", "Exp date");
-		String CVV_value=Utils.getDataFromTestData("KYC", "CVV");
+		String CVV_value="";
+		String Checkout1=Utils.getDataFromTestData("KYC", "Checkout");
 		String Card_Number="";
-		String Currency_Type=Currency_option;
+			
+        String Currency_Type=Currency_option;
 		
-        if(Currency_Type=="British pound") {
-        	Card_Number=Card_Number_GBP;
-		}else if(Currency_Type=="Euro"){
-			Card_Number=Card_Number_EURO;
-		}else if(Currency_Type=="Singapore Dollar") {
-			Card_Number=Card_Number_SGD;
+        if(Currency_Type=="US Dollar") {
+        	Card_Number=Utils.getDataFromTestData("KYC", "USD");
+        	CVV_value=Utils.getDataFromTestData("KYC", "CVV2");
 		}else{
-			Card_Number=Card_Number_USD;
+		    Card_Number=Utils.getDataFromTestData("KYC", "EUR");
+        	CVV_value=Utils.getDataFromTestData("KYC", "CVV1");
+
 		}
-        
+
         
 		navigateUrl(driver,Url);
 		
@@ -66,6 +63,8 @@ public class BuyCrypto extends Keywords{
 		waitForElement(driver,ETH_arbiturium);
 		click(driver,ETH_arbiturium);
 		
+		System.out.println("Estimate Value :"+getText(driver,Estimate_Value));	
+
 		waitForElement(driver,Buy_Now_Btn);
 		click(driver,Buy_Now_Btn);
 		
@@ -82,7 +81,7 @@ public class BuyCrypto extends Keywords{
 		
 		waitForElement1(driver,verification_input);
 		newTab2(driver);
-		wait(driver,"1");
+		//wait(driver,"1");
         driver.get("https://www.mailinator.com/");
 		waitForElement1(driver,publicinbox);
 		click(driver, publicinbox);
@@ -100,20 +99,24 @@ public class BuyCrypto extends Keywords{
 		String verificationCode=getText(driver,verification_Code);
 		driver.switchTo().defaultContent();
 		
-		try {
-			Robot r = new Robot();
-			r.keyPress(KeyEvent.VK_CONTROL);
-			r.keyPress(KeyEvent.VK_W);
-			r.keyRelease(KeyEvent.VK_CONTROL);
-			wait(driver, "1");
-			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-			wait(driver, "1");
-//			System.out.println(tabs.size());
-			driver.switchTo().window(tabs.get(0));
-			wait(driver, "1");
-		} catch (Exception e) {
-			
-		}
+		ArrayList<String> tab2 = new ArrayList<String>(driver.getWindowHandles());
+		wait(driver, "1");
+		driver.switchTo().window(tab2.get(0));
+		
+//		try {
+//			Robot r = new Robot();
+//			r.keyPress(KeyEvent.VK_CONTROL);
+//			r.keyPress(KeyEvent.VK_W);
+//			r.keyRelease(KeyEvent.VK_CONTROL);
+//			wait(driver, "1");
+//			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+//			wait(driver, "1");
+////			System.out.println(tabs.size());
+//			driver.switchTo().window(tabs.get(0));
+//			wait(driver, "1");
+//		} catch (Exception e) {
+//			
+//		}
 		
 		waitForElement1(driver,verification_input);
 		sendKeys(driver,verification_input,verificationCode);
@@ -127,8 +130,7 @@ public class BuyCrypto extends Keywords{
 		waitForElement1(driver,Card);
 		System.out.println("card payment");
 		waitForElement1(driver,cardHolderName);
-		wait(driver, "3");
-		driver.switchTo().frame(0);
+		driver.switchTo().frame("checkout-frames-cardNumber");
 		System.out.println("After frame switch");
 		click(driver,cardNum_input);
 		
@@ -139,7 +141,7 @@ public class BuyCrypto extends Keywords{
 		waitForElement1(driver,cardHolderName);
 		sendKeys(driver,cardHolderName,"Test");
 		
-		driver.switchTo().frame(1);
+		driver.switchTo().frame("checkout-frames-expiryDate");
 		waitForElement1(driver,expiry_date);
 		click(driver,expiry_date);
 		sendKeys(driver,expiry_date,Expiry_date);
@@ -147,7 +149,7 @@ public class BuyCrypto extends Keywords{
 		driver.switchTo().defaultContent();
 
 		
-		driver.switchTo().frame(2);
+		driver.switchTo().frame("checkout-frames-cvv");
 
 		waitForElement1(driver,CVV_input);
 		click(driver,CVV_input);
@@ -155,10 +157,11 @@ public class BuyCrypto extends Keywords{
 		
 		driver.switchTo().defaultContent();
 
-		click(driver,cardHolderName);
-		wait(driver,"2");
+		click2(driver,Card);
 		
-		doubleClick(driver,AddToCard_Btn);
+		waitForElement(driver,AddToCard_Btn);
+		click(driver,AddToCard_Btn);
+		
 		
 		waitForElement1(driver,confirm_order_page);
 		click(driver,I_accept);
@@ -189,22 +192,34 @@ public class BuyCrypto extends Keywords{
 		}
 		
 		waitForElement1(driver,Payment_authorisation_page);
+          if(Currency_Type=="US Dollar") {
+			wait(driver,"2");
+			driver.switchTo().frame("my-iframe");
+			wait(driver,"1");
+			driver.switchTo().frame("cko-3ds2-iframe");
+			waitForElement(driver,Checkout);
+			click(driver,Checkout);
+			sendKeys(driver,Checkout,Checkout1);
+			click(driver,continueBtn);
+			driver.switchTo().defaultContent();
+		}
+		
 		waitForElement1(driver,payment_processing);
 		
-//		try {
-//			
-//             elementnotvisible1(driver,payment_processing);
-//	         waitForElement1(driver,Amt_delivered);
-//			 String success=getText(driver,Amt_delivered);
-//			 
-//			 add(driver,"Delivered messege : ", success, true, "");
-//
-//			
-//		}catch(Exception e) {
-//			
-//			add1(driver, "Failed to get delivered messege ", LogAs.FAILED, true, "");
-//
-//		}
+		try {
+			
+             elementnotvisible1(driver,payment_processing);
+	         waitForElement(driver,Amt_delivered);
+			 String success=getText(driver,Amt_delivered);
+			 
+			 add(driver,"Delivered messege : ", success, true, "");
+
+			
+		}catch(Exception e) {
+			
+			add1(driver, "Result :  ", LogAs.FAILED, true, "Failed to get the delivered message ..!");
+
+		}
 		
 	
 		

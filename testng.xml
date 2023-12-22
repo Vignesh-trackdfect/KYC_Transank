@@ -5,22 +5,16 @@
 			<class name="commonMethods.Testcases" />
 		</classes>
 		<methods>
-			<include name="buyCryptoEuro" priority="1" />
-			<include name="buyCryptoBritish" priority="2" />
-			<include name="buyCryptoUSDoller" priority="3" />
-			<include name="buyCryptoSingapore" priority="4" />
-			<include name="buyCryptoNewZealand" priority="5" />
-			<include name="buyCryptoNorwegian" priority="6" />
-			<include name="buyCryptoSwedish" priority="7" />
-			<include name="buyCryptoCanada" priority="8" />
+			<include name="buyCryptoEuroLite" priority="1" />
+			<include name="buyCryptoBritishLite" priority="2" />
+			<include name="buyCryptoUSDollerLite" priority="3" />
+			<include name="buyCryptoSingaporeLite" priority="4" />
 		</methods>
 	</test>
 	<listeners>
-		<listener
-			class-name="atu.testng.reports.listeners.ATUReportsListener" />
+		<listener class-name="atu.testng.reports.listeners.ATUReportsListener" />
 		<listener
 			class-name="atu.testng.reports.listeners.ConfigurationListener" />
-		<listener
-			class-name="atu.testng.reports.listeners.MethodListener" />
+		<listener class-name="atu.testng.reports.listeners.MethodListener" />
 	</listeners>
 </suite>

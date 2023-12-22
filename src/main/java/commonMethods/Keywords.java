@@ -35,7 +35,6 @@ import org.json.JSONObject;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Capabilities;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
@@ -58,13 +57,22 @@ import org.testng.ITestResult;
 import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.response.Response;
 
+import Locators.AddressPage_Locators;
+import Locators.Card_Deatails_Page_Locators;
+import Locators.ConfirmOrder_Page_Locators;
+import Locators.Email_Page_Locators;
+import Locators.Email_Verification_Page_Locators;
+import Locators.HOME_Page_Locators;
+import Locators.PaymentAuthorization_Page_Locators;
+import Locators.PersonalDetails_Page_Locators;
+import Locators.Wallet_Address_Page_Locators;
 import atu.testng.reports.ATUReports;
 import atu.testng.reports.logging.LogAs;
 import atu.testng.reports.utils.Directory;
 import net.sourceforge.tess4j.ITesseract;
 import net.sourceforge.tess4j.Tesseract;
 
-public class Keywords extends ATUReports implements KYC_Locators {
+public class Keywords extends ATUReports implements HOME_Page_Locators,AddressPage_Locators,Email_Page_Locators,Email_Verification_Page_Locators,PaymentAuthorization_Page_Locators,PersonalDetails_Page_Locators,Wallet_Address_Page_Locators,Card_Deatails_Page_Locators,ConfirmOrder_Page_Locators{
 	private static final String HMAC_SHA1_ALGORITHM = "HMACSHA1";
 
 	public String ElementWait = Utils.getDataFromTestConfig("Wait Time");
@@ -385,10 +393,12 @@ public class Keywords extends ATUReports implements KYC_Locators {
 			driver.manage().timeouts().implicitlyWait(160, TimeUnit.SECONDS);
 			WebDriverWait wait = new WebDriverWait(driver, 40);
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(values[1])));
+			System.out.println("Element visible");
 			add(driver, "Wait for the Element " + values[0], LogAs.PASSED, true, values[0]);
 		} catch (Exception e) {
 			((JavascriptExecutor) driver).executeScript("lambda-status=failed");
 			add1(driver, "Element Not Found - " + values[0]+"- "+e.getLocalizedMessage() + e, LogAs.FAILED, true, values[0]);
+			System.out.println("Element Not visible");
 			Assert.fail();
 		}
 	}
@@ -439,12 +449,36 @@ public class Keywords extends ATUReports implements KYC_Locators {
 		}
 
 	}
+	
+	public void click2(WebDriver driver, String Xpath) {		
+		String[] values = splitXpath(Xpath);
+		try {
+			waitForElement(driver,Xpath);
+			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		    driver.findElement(By.xpath(values[1])).click();
+	
+			add(driver, "Click on " + values[0], LogAs.PASSED, true, values[0]);
+			
+//			Object de = executor.executeScript("return store.scene.getEngine().getFps()");
+//			System.out.println("Duration of action performed : "+de);
+			
+//			this.getfps(driver);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			add1(driver, "Unable to click on " + values[0]+"- "+e.getLocalizedMessage(), LogAs.FAILED, true, values[0]);
+			((JavascriptExecutor) driver).executeScript("lambda-status=failed");
+			Assert.fail();
+		}
 
-	public void click1(WebDriver driver, String path, int input) {
+	}
+
+
+	public void click1(WebDriver driver, String path) {
 		String[] values = splitXpath(path);
 		try {
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			WebElement webElement = driver.findElement(By.xpath(values[input]));
+			WebElement webElement = driver.findElement(By.xpath(values[1]));
 			System.out.println(webElement);
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');",
@@ -827,6 +861,7 @@ public class Keywords extends ATUReports implements KYC_Locators {
 		String[] values = splitXpath(xpath);
 		try {
 			WebElement webElement = driver.findElement(By.xpath(values[1]));
+			wait(driver,"2");
 			String text = webElement.getText();
 			add(driver, "The value ' " + text + " ' is retrieved from the element ' " + values[0] + "'", LogAs.PASSED,
 					true, values[0]);
@@ -989,7 +1024,7 @@ public class Keywords extends ATUReports implements KYC_Locators {
 		try {
 
 			WebElement webElement = driver.findElement(By.xpath(values[1]));
-			for (int i = 1; i <= 100; i++) {
+			for (int i = 1; i <= 10; i++) {
 
 				boolean flag = webElement.isDisplayed();
 
@@ -1502,6 +1537,7 @@ public class Keywords extends ATUReports implements KYC_Locators {
 	public void enter(WebDriver driver) {
 		try {
 			Actions actionObject = new Actions(driver);
+			wait(driver,"2");
 			actionObject.sendKeys(Keys.ENTER).build().perform();
 		} catch (Exception e) {
 			((JavascriptExecutor) driver).executeScript("lambda-status=failed");
@@ -2502,5 +2538,37 @@ public class Keywords extends ATUReports implements KYC_Locators {
 			
 			
 		}
+		
+		
+		
+          public void typeCurrency1(WebDriver driver,String Xpath) {
+			
+			String[] values = splitXpath(Xpath);
+
+			waitForElement(driver,Xpath);
+			int min_Amount=20;
+			int amount=getRandomNumber(min_Amount,30);
+			String amountValue=String.valueOf(amount);
+			
+			
+			for(int i=0;i<5;i++) {
+				doubleClick(driver,Xpath);
+				sendKeys(driver,Xpath,amountValue);
+				wait(driver,"3");
+				boolean error=isDisplayed(driver,error_amount);
+				
+				if(error) {
+					  min_Amount=getAmount(driver,error_amount);
+					  amount=getRandomNumber(min_Amount,55);
+					  amountValue=Integer.toString(amount);
+				}else {
+					break;
+				}
+
+			}
+			
+			
+		}
+
 		
 }

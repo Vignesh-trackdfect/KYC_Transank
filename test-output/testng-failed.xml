@@ -10,7 +10,7 @@
     <classes>
       <class name="commonMethods.Testcases">
         <methods>
-          <include name="buyCryptoSwedish"/>
+          <include name="buyCryptoUSDollerLite"/>
           <include name="getDataFromConfig"/>
         </methods>
       </class> <!-- commonMethods.Testcases -->
