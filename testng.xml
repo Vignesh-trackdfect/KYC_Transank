@@ -5,10 +5,10 @@
 			<class name="commonMethods.Testcases" />
 		</classes>
 		<methods>
-			<include name="buyCryptoEuroLite" priority="1" />
-			<include name="buyCryptoBritishLite" priority="2" />
-			<include name="buyCryptoUSDollerLite" priority="3" />
-			<include name="buyCryptoSingaporeLite" priority="4" />
+			
+			<include name="buyCryptoUSDoller" priority="7" />
+			<include name="buyCryptoSingapore" priority="8" />
+			
 		</methods>
 	</test>
 	<listeners>

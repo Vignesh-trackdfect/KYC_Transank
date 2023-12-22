@@ -20,7 +20,6 @@ public class BuyCrypto extends Keywords{
 		
 		String Url=TestNgXml.getdatafromExecution().get("buyCryptoEuro");
 		String email_id=Utils.getDataFromTestData("KYC", "Mail");
-<<<<<<< HEAD
         String Eth_Address=Utils.getDataFromTestData("KYC", "ETH Address");
 		
 		String Expiry_date=Utils.getDataFromTestData("KYC", "Exp date");
@@ -29,28 +28,8 @@ public class BuyCrypto extends Keywords{
 		String Card_Number="";
 			
         String Currency_Type=Currency_option;
-		
-        if(Currency_Type=="US Dollar") {
-=======
-		String Eth_Address=Utils.getDataFromTestData("KYC", "ETH Address");
-		
-		
-		String Expiry_date=Utils.getDataFromTestData("KYC", "Exp date");
-		String CVV_value="";
-		String Checkout=Utils.getDataFromTestData("KYC", "Checkout");
-		
-		//Card Number details 
-		String Card_Number_USD=Utils.getDataFromTestData("KYC", "USD");
-		String Card_Number_EURO=Utils.getDataFromTestData("KYC", "EUR");
-		String Card_Number_SGD=Utils.getDataFromTestData("KYC", "SGD");
-		String Card_Number_GBP=Utils.getDataFromTestData("KYC", "GBP");
-		
-		
-		String Card_Number="";
-		String Currency_Type=Currency_option;//Currency type
-		
+			
 		if(Currency_Type=="US Dollar") {
->>>>>>> origin/main
         	Card_Number=Utils.getDataFromTestData("KYC", "USD");
         	CVV_value=Utils.getDataFromTestData("KYC", "CVV2");
 		}else{
@@ -230,10 +209,8 @@ public class BuyCrypto extends Keywords{
 		
 		try {
 			
-<<<<<<< HEAD
+
              elementnotvisible1(driver,payment_processing);
-=======
->>>>>>> origin/main
 	         waitForElement(driver,Amt_delivered);
 			 String success=getText(driver,Amt_delivered);
 			 
@@ -242,21 +219,18 @@ public class BuyCrypto extends Keywords{
 			
 		}catch(Exception e) {
 			
-<<<<<<< HEAD
 			add1(driver, "Result :  ", LogAs.FAILED, true, "Failed to get the delivered message ..!");
 
 		}
 		
-=======
 			add1(driver, "Failed to get the delivered message ..!", LogAs.FAILED, true, "");
 
 		}
 	
->>>>>>> origin/main
 	
 		
 
 	}
 	
 	
-}
+

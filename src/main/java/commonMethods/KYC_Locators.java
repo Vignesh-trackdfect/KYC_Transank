@@ -58,11 +58,10 @@ public interface KYC_Locators {
 	public static String I_have_paid="I have Paid Button>//*[text()='I have Paid']";
 	public static String Amt_delivered="Amount Succesfully Delivered>//h4[contains(., 'successfully delivered to your wallet')]";
 	
-<<<<<<< HEAD
+
 	
 	
-	public static String verify_Identity="Verify Identity>//*[text()='Verify your identity']";
-=======
+
 	public static String personalDetailsPage="Personal Details Page>//*[text()='Personal Details']";
 	public static String FirstName_Input="First Name Input> //input[@name='firstName']";
 	public static String LastName_Input="Last Name Input>//input[@name='lastName']";
@@ -75,7 +74,7 @@ public interface KYC_Locators {
     public static String country_Input="Country Input>//input[@id='countryCode']";
     public static String UK_select="Select UK>//*[@role='combobox' and @aria-activedescendant='countryCode-option-0']";
     public static String verify_Identity="Verify Identity>//*[text()='Verify your identity']";
->>>>>>> origin/main
+
     public static String start_verification="Start verification>//*[text()='Start verification']";
     public static String Issuing_country="Issuing Country>//*[@placeholder='Select issuing country']";
     public static String UK_Issuing="Select UK >//*[text()='United Kingdom of Great Britain and Northern Ireland']";
@@ -84,8 +83,7 @@ public interface KYC_Locators {
     
 	public static String Upload_Btn="Upload button>//button[text()='Upload']";
 	
-<<<<<<< HEAD
-=======
+
 	public static String billing_AddressPage="Billing Address>//*[text()='Billing Address']";
 	
 	public static String Checkout="Checkout>//input[@id='password']";
@@ -93,9 +91,7 @@ public interface KYC_Locators {
 	public static String trackOrder="Track Order>//*[text()='Track the Order']";
 	public static String processingTime="Processsing Time>//*[text()='Processing time']";
 	
-	
->>>>>>> origin/main
-	
+
 	
 	
 }
